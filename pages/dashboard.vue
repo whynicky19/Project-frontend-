@@ -3,7 +3,7 @@
     <div class="max-w-4xl mx-auto">
       <div class="flex items-center justify-between mb-8">
         <div>
-          <h1 class="text-2xl font-bold text-white">Личный123 кабинет</h1>
+          <h1 class="text-2xl font-bold text-white">Личный кабинет</h1>
           <p class="text-gray-400 mt-1">{{ authStore.user?.email }}</p>
         </div>
         <div class="flex items-center gap-3">
