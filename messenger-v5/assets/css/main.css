@@ -1,0 +1,122 @@
+
+/* ========== RESET ========== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:14px;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:#111827;background:#f9fafb;-webkit-font-smoothing:antialiased}
+#__nuxt{height:100vh;overflow:hidden;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit;font-size:inherit}
+input,textarea,select{font-family:inherit;font-size:inherit;outline:none}
+img{display:block;max-width:100%}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#d1d5db;border-radius:10px}
+::-webkit-scrollbar-thumb:hover{background:#9ca3af}
+
+/* ========== TOKENS ========== */
+:root{
+  --blue:#2563eb;--blue-h:#1d4ed8;--blue-l:#eff6ff;--blue-m:#dbeafe;
+  --bg:#f9fafb;--surface:#ffffff;--surface2:#f3f4f6;--surface3:#e5e7eb;
+  --text1:#111827;--text2:#374151;--text3:#6b7280;--text4:#9ca3af;
+  --border:#e5e7eb;--border2:#d1d5db;
+  --green:#16a34a;--green-l:#dcfce7;
+  --red:#dc2626;--red-l:#fee2e2;
+  --yellow:#d97706;--yellow-l:#fef3c7;
+  --sh-xs:0 1px 2px rgba(0,0,0,.05);
+  --sh-sm:0 1px 3px rgba(0,0,0,.1),0 1px 2px rgba(0,0,0,.06);
+  --sh-md:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.06);
+  --sh-lg:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.05);
+  --r-xs:4px;--r-sm:6px;--r-md:8px;--r-lg:12px;--r-xl:16px;--r-2xl:20px;
+  --sidebar:240px;--topbar:60px
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.anim-in{animation:fadeIn .2s ease}
+.anim-scale{animation:scaleIn .15s ease}
+
+/* ========== BUTTONS ========== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:8px 16px;border-radius:var(--r-md);font-size:14px;font-weight:500;transition:all .15s;cursor:pointer;border:none;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.5;cursor:not-allowed;pointer-events:none}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-h)}
+.btn-white{background:#fff;color:var(--text2);border:1px solid var(--border2)}
+.btn-white:hover{background:var(--surface2)}
+.btn-ghost{background:transparent;color:var(--text3)}
+.btn-ghost:hover{background:var(--surface2);color:var(--text1)}
+.btn-danger{background:var(--red-l);color:var(--red)}
+.btn-danger:hover{background:#fecaca}
+.btn-green{background:var(--green-l);color:var(--green)}
+.btn-green:hover{background:#bbf7d0}
+.btn-sm{padding:5px 12px;font-size:13px;border-radius:var(--r-sm)}
+.btn-lg{padding:10px 20px;font-size:15px}
+.btn-icon{padding:7px;border-radius:var(--r-sm)}
+.btn-icon-round{padding:7px;border-radius:50%}
+
+/* ========== INPUTS ========== */
+.input{width:100%;padding:9px 12px;border:1px solid var(--border2);border-radius:var(--r-md);background:#fff;color:var(--text1);font-size:14px;transition:border-color .15s,box-shadow .15s}
+.input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.input::placeholder{color:var(--text4)}
+.input-sm{padding:7px 10px;font-size:13px}
+
+/* ========== AVATAR ========== */
+.av{border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;color:#fff;flex-shrink:0;user-select:none}
+.av-xs{width:24px;height:24px;font-size:10px}
+.av-sm{width:32px;height:32px;font-size:13px}
+.av-md{width:40px;height:40px;font-size:16px}
+.av-lg{width:48px;height:48px;font-size:18px}
+.av-xl{width:64px;height:64px;font-size:24px}
+
+/* ========== CARD ========== */
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:20px;box-shadow:var(--sh-xs)}
+
+/* ========== MODAL ========== */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;z-index:100;animation:fadeIn .15s ease}
+.modal{background:#fff;border-radius:var(--r-xl);padding:24px;width:calc(100% - 32px);max-width:480px;box-shadow:var(--sh-lg);animation:scaleIn .15s ease;max-height:90vh;overflow-y:auto}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.modal-title{font-size:16px;font-weight:600}
+.modal-foot{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}
+
+/* ========== FORM ========== */
+.frow{margin-bottom:14px}
+.flabel{display:block;font-size:13px;font-weight:500;color:var(--text2);margin-bottom:5px}
+
+/* ========== BADGE ========== */
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:100px;font-size:12px;font-weight:500}
+.badge-blue{background:var(--blue);color:#fff}
+.badge-green{background:var(--green-l);color:var(--green)}
+.badge-yellow{background:var(--yellow-l);color:var(--yellow)}
+.badge-red{background:var(--red-l);color:var(--red)}
+.badge-gray{background:var(--surface2);color:var(--text3)}
+
+/* ========== SPINNER ========== */
+.spinner{width:18px;height:18px;border:2px solid var(--border2);border-top-color:var(--blue);border-radius:50%;animation:spin .65s linear infinite}
+
+/* ========== EMPTY STATE ========== */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:48px 24px;text-align:center;color:var(--text4)}
+.empty-icon{font-size:40px;margin-bottom:4px}
+.empty-title{font-size:15px;font-weight:500;color:var(--text3)}
+.empty-sub{font-size:13px}
+
+/* ========== UTILS ========== */
+.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.w-full{width:100%}
+.divider{height:1px;background:var(--border);margin:16px 0}
+
+/* ========== TOGGLE ========== */
+.toggle{position:relative;display:inline-block;width:40px;height:22px;flex-shrink:0}
+.toggle input{opacity:0;width:0;height:0}
+.tog-t{position:absolute;inset:0;background:#d1d5db;border-radius:22px;cursor:pointer;transition:.25s}
+.tog-t:before{content:'';position:absolute;width:16px;height:16px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.25s;box-shadow:var(--sh-xs)}
+.toggle input:checked+.tog-t{background:var(--blue)}
+.toggle input:checked+.tog-t:before{transform:translateX(18px)}
+
+/* ========== TABS ========== */
+.tabs{display:flex;border-bottom:1px solid var(--border);gap:0}
+.tab-btn{padding:10px 16px;font-size:14px;font-weight:500;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;margin-bottom:-1px}
+.tab-btn:hover{color:var(--text1)}
+.tab-btn.active{color:var(--blue);border-bottom-color:var(--blue)}
